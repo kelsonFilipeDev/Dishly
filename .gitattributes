@@ -1,11 +1,19 @@
 * text=auto eol=lf
 
+# Melhor visualização de diffs no Git
 *.blade.php diff=html
 *.css diff=css
 *.html diff=html
 *.md diff=markdown
 *.php diff=php
+*.js diff=javascript
+*.vue diff=html
+*.json diff=json
 
-/.github export-ignore
+# Ignorar esses ao exportar (ex: git archive)
+.env export-ignore
+*.env.* export-ignore
 CHANGELOG.md export-ignore
+/.github export-ignore
+/tests export-ignore
 .styleci.yml export-ignore
