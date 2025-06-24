@@ -89,7 +89,7 @@ O sistema garante controlo de acessos através de perfis: Básico, Médio e Avan
 
 ---
 
-## 👨Desenvolvido por
+## Desenvolvido por
 
 Projeto desenvolvido com dedicação por [Kelson Filipe Dev](https://github.com/kelsonFilipeDev) no contexto de engenharia de software, com foco em escalabilidade, manutenibilidade e segurança da informação.
 
