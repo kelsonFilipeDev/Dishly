@@ -1,65 +1,99 @@
 # Dislhy
 
-Acervo de Receitas Dislhy
-Uma empresa deseja informatizar o acervo de receitas que ela inventa, que iremos chamar de Dislhy, e comercializa sob a forma de livros. Estão envolvidos na elaboração das receitas e dos livros os cozinheiros, os degustadores (que controlam a qualidade  das receitas), e os editores dos livros. Todas estas pessoas são empregados da empresa, e são caracterizados por  um id, nome, data de ingresso na firma, e salário recebido. Cada receita tem um código único, um nome, foi  inventada por um cozinheiro numa dada data, e pertence a uma categoria. Podem existir diferentes receitas com  ○ mesmo nome, mas um mesmo cozinheiro não elabora duas receitas com o mesmo nome. Uma categoria é  extraída de uma lista de categorias fixas elaborada pela empresa (Ex: carne, ave, bolo, torta, sopa, etc.). É norma  da empresa não permitir a elaboração de receitas que não pertençam a categorias registradas pela firma, sendo  possível não existirem receitas para categorias recém-criadas. Diversos ingredientes (ex: açúcar, farinha, leite)  são usados para elaborar uma receita, cada um deles usado numa certa quantidade (ex: 2) e numa certa medida  (ex: colher de chá, xícara, ml). A medida pode ser opcional para certos ingredientes (ex: ovo). Uma receita possui  também uma descrição de seu modo de preparação, e o número de porções que rende. Cada ingrediente possui  um nome único e uma descrição, particularmente útil para ingredientes exóticos tais como blachan, kiri ou um  eboshi. Os cozinheiros renomados podem, para efeito de publicidade dos livros, fornecer um nome fantasia, bem como uma lista de restaurantes importantes nos quais já trabalhou. Cada restaurante possui um id que o  identifica, um nome, um endereço e o tipo de sua categoria (por exemplo, luxo, simples, ...). Também, sobre os  restaurantes pretende-se saber os tipos de pratos que são confensionados e os seus respectivo preços bem  como a sua capacidade máxima. Todo cozinheiro deve produzir um certo número de receitas por mês, sendo que  os cozinheiros recém-contratados têm um prazo de até 45 dias para entregar suas primeiras receitas. Receitas  podem ser testadas por degustadores. Cada teste envolve um degustador, é executado numa data, e envolve a  atribuição de uma nota. Podem existir receitas sem teste, mas todo degustador contratado pela firma já executou  pelo menos um teste. A empresa edita livros de receitas, nos quais, obviamente, constam diversas receitas. Essas  receitas podem ou não ser inéditas, ou seja, já terem sido publicadas em outros livros. Além de suas receitas,  cada livro é caracterizado por um título único, um código ISBN (também único), e pelo editor do livro.  
-Considerações: o atributo endereço e data precisam ser decompostos. Cada utilizador do sistema deve ter um  nível de acesso que pode ser: Básico - Têm acesso as informações básicas do sistema, Médio - Têm acesso as  informações Média do sistema, Avançado - Têm acesso as informações avançadas do sistema.
+**Dislhy** é um sistema completo de gestão de receitas desenvolvido para informatizar e centralizar o acervo culinário de uma empresa que cria, testa e publica receitas em livros gastronómicos. Este projeto organiza o trabalho de cozinheiros, degustadores e editores, garantindo rastreabilidade, padronização e controlo de qualidade em todas as etapas — da criação da receita à sua publicação.
 
-Desenvolvido com com amor e dedicação por [Kelson Filipe Dev](https://github.com/kelsonFilipeDev)
+---
+
+## Visão Geral
+
+Cada ator do sistema — cozinheiros, degustadores e editores — é um colaborador identificado por atributos como ID, nome, data de ingresso e salário. As receitas têm código único, nome, categoria, autor, ingredientes e modo de preparo. Ingredientes possuem unidade de medida (opcional) e são descritos detalhadamente para facilitar uso em diferentes contextos.
+
+Cozinheiros podem fornecer nomes artísticos e histórico profissional com restaurantes onde já trabalharam. Degustadores são responsáveis por testes de qualidade com notas atribuídas. Livros reúnem receitas inéditas ou republicadas, possuem ISBN, título único e editor responsável.
+
+O sistema garante controlo de acessos através de perfis: Básico, Médio e Avançado.
+
+---
 
 ## Funcionalidades
 
-- Integração com Laravel Breeze
-- Totalmente responsivo
-- Autenticação de utilizadores
-- Registar:
+- Integração com Laravel Breeze para autenticação
+- Interface totalmente responsiva
+- Sistema de permissões por nível de acesso
+- Gestão de entidades:
   - Cozinheiros
   - Degustadores
   - Restaurantes
-  - Editores dos livros
+  - Editores
   - Receitas
   - Categorias
   - Ingredientes
   - Livros
-- Listar receitas por livros
-- Listar consultar, alterar, eliminar as entidades acima citados para registo
-- Listar os preços e os pratos que são confensionados nos restaurantes que o cozinheiro já trabalhou
-- Listar os restaurantes em que cada cozinheiro já trabalhou
-- Gerar um relatório em pdf de cada receita e das receitas por cada cozinheiro
-- Gerar um ficheiro pdf para cada teste
-- Listar e consultar os testes das receitas
-- listar os testes por nota em ordem decrescente e crescente
-- Listar e consultar todas as receitas feitas (por dia, por semana, por mês)
-- Listar e consultar todas as receitas feitas (por dia, por semana, por mês) por Cozinheiros
-- Controlar o numero de acessos ao sistema
-- Permitir a mudança de senha do funcionário e de nível de acesso
-- Painel de administração moderno e intuitivo
+- Listagem e consulta por livro, por cozinheiro e por período (dia, semana, mês)
+- Relatórios em PDF:
+  - Receitas por cozinheiro
+  - Detalhes individuais de receitas
+  - Testes de degustação
+- Listagem de testes com ordenação por nota
+- Histórico profissional dos cozinheiros (restaurantes, pratos, preços e capacidade)
+- Controlo de acessos e registo de atividades
+- Alteração de senha e nível de acesso
+- Painel administrativo moderno, organizado e intuitivo
+
+---
 
 ## Stack Tecnológica
- 
+
 ### Frontend
-- HTML5
-- CSS3
-- Tailwind
-- JavaScript
+
+- HTML5  
+- CSS3  
+- Tailwind CSS  
+- JavaScript  
 - Vue.js
 
-  # Esquema de cores do layout
-  - GOLDEN SAND: HEX: #FFE6B4
-  - SUNSET AMBER: HEX: #FF9E4F
-  - BURNT SIENNA: HEX: #B55233
-  - DARK COGNAC: HEX: #5B3228
+#### Paleta de Cores
+
+| Cor             | HEX       |
+|-----------------|-----------|
+| Golden Sand     | `#FFE6B4` |
+| Sunset Amber    | `#FF9E4F` |
+| Burnt Sienna    | `#B55233` |
+| Dark Cognac     | `#5B3228` |
+
+---
 
 ### Backend
-- PHP 8.4.4
-- Laravel 10
-- Laravel Breeze
-- JSON
+
+- PHP 8.4.4  
+- Laravel 10  
+- Laravel Breeze  
+- JSON API
+
+---
 
 ### Base de Dados
+
 - MySQL
 
-### Ambiente Local
-- XAMPP
+---
+
+### Ambiente de Desenvolvimento
+
+- XAMPP (Apache + MySQL + PHP)
+
+---
 
 ### Controlo de Versão
+
 - Git & GitHub
+
+---
+
+## 👨Desenvolvido por
+
+Projeto desenvolvido com dedicação por [Kelson Filipe Dev](https://github.com/kelsonFilipeDev) no contexto de engenharia de software, com foco em escalabilidade, manutenibilidade e segurança da informação.
+
+---
+
+> “Organizar receitas é simples. Torná-las acessíveis, escaláveis e bem geridas — isso sim é engenharia de software.”  
+> — _Kelson Filipe Dev_
