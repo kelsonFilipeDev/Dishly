@@ -44,10 +44,11 @@
     */
 
     // Formulário de verificação da senha do sistema
-    Route::get('/admin', [AdminRegisterController::class, 'showSystemPasswordPrompt']);
+    Route::get('/admin', [VerifySystemPasswordController::class, 'showSystemPasswordPrompt']);
+
 
     // Processamento da verificação da senha do sistema
-    Route::post('/admin/verify-password', [AdminRegisterController::class, 'verifySystemPassword']);
+    Route::post('/admin/verify-password', [VerifySystemPasswordController::class, 'verifySystemPassword']);
 
     // Rotas protegidas por CheckSystemPassword
     // Está a dar erro, corrigir assim que poder.

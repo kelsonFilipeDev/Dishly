@@ -30,6 +30,7 @@
 <script setup>
 import { ref } from 'vue'
 import axios from 'axios'
+import { router } from '@inertiajs/vue3'
 
 const systemPassword = ref('')
 const errorMessage = ref('')
@@ -46,9 +47,19 @@ const submitPassword = async () => {
 
     if (response.data.status === 'success') {
       router.visit('/admin/create')
+    } else {
+      errorMessage.value = response.data.message || 'Verificação falhou.'
     }
+
   } catch (error) {
-    errorMessage.value = error.response?.data?.message || 'Erro desconhecido.'
+    console.error('Erro completo:', error)
+    if (error.response && error.response.data && error.response.data.message) {
+      errorMessage.value = error.response.data.message
+    } else if (error.response && error.response.data) {
+      errorMessage.value = JSON.stringify(error.response.data)
+    } else {
+      errorMessage.value = 'Erro desconhecido.'
+    }
   } finally {
     loading.value = false
   }
