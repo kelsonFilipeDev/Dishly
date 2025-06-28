@@ -7,7 +7,8 @@
     use App\Http\Controllers\Admin\AdminRegisterController;
     use App\Http\Controllers\Admin\AdminLoginController;
     use App\Http\Controllers\Admin\VerifySystemPasswordController;
-
+    use App\Http\Controllers\Admin\AdminUserController;
+    
 
     /*
     |--------------------------------------------------------------------------
@@ -72,6 +73,16 @@
         Route::get('/admin/dashboard', function () {
             return Inertia::render('Admin/AdminDashboard');
         })->name('admin.dashboard');
+
+        Route::prefix('admin')->middleware(['auth', 'verified'])->group(function () {
+            Route::get('/users', [AdminUserController::class, 'index'])->name('admin.users.index');
+            Route::get('/users/{user}', [AdminUserController::class, 'show'])->name('admin.users.show');
+            Route::post('/users', [AdminUserController::class, 'store'])->name('admin.users.store');
+            Route::put('/users/{user}', [AdminUserController::class, 'update'])->name('admin.users.update');
+            Route::delete('/users/{user}', [AdminUserController::class, 'destroy'])->name('admin.users.destroy');
+        });
+
+
     // });
 
     // Rotas de autenticação (breeze ou fortify)
