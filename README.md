@@ -10,8 +10,6 @@ Cada ator do sistema — cozinheiros, degustadores e editores — é um colabora
 
 Cozinheiros podem fornecer nomes artísticos e histórico profissional com restaurantes onde já trabalharam. Degustadores são responsáveis por testes de qualidade com notas atribuídas. Livros reúnem receitas inéditas ou republicadas, possuem ISBN, título único e editor responsável.
 
-O sistema garante controlo de acessos através de perfis: Básico, Médio e Avançado.
-
 ---
 
 ## Funcionalidades

@@ -3,9 +3,11 @@
     <div class="w-full max-w-md bg-white p-8 rounded-2xl shadow-xl">
       <!-- Logo Placeholder -->
       <div class="flex justify-center mb-6">
-        <div class="w-20 h-20 bg-[#FF9E4F] rounded-full flex items-center justify-center text-white text-2xl font-bold">
-          LOGO
-        </div>
+        <Link>
+          <div class="w-20 h-20 bg-[#FF9E4F] rounded-full flex items-center justify-center text-white text-2xl font-bold">
+            LOGO
+          </div>
+        </Link>
       </div>
 
       <h2 class="text-2xl font-semibold text-[#5B3228] mb-6 text-center">Criar Conta</h2>
@@ -73,6 +75,7 @@
 <script setup>
 import { ref } from 'vue'
 import axios from 'axios'
+import { Link, usePage } from '@inertiajs/vue3'
 
 // Captura o token CSRF da tag <meta name="csrf-token"> no HTML Blade
 const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content')
@@ -90,7 +93,7 @@ const register = async () => {
     const response = await axios.post('/register', form.value)
     console.log('Utilizador criado:', response.data)
     // Redireciona para o dashboard ou home após sucesso
-    window.location.href = '/home'
+    window.location.href = 'Public/Home'
   } catch (error) {
     console.error('Erro no registro:', error.response?.data ?? error.message)
     alert('Erro ao criar conta. Verifica os dados ou tenta novamente.')

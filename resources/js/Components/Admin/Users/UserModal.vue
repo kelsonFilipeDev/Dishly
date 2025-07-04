@@ -38,7 +38,6 @@
             class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#FF9E4F]"
             required
           >
-            <option value="utilizador_final">Utilizador Final</option>
             <option value="cozinheiro">Cozinheiro</option>
             <option value="degustador">Degustador</option>
             <option value="editor">Editor</option>

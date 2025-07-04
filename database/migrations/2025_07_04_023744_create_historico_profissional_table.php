@@ -11,8 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('editors', function (Blueprint $table) {
+        Schema::create('historico_profissional', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('cozinheiro_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('restaurante_id')->constrained('restaurante')->onDelete('cascade');
+            $table->date('inicio');
+            $table->date('fim')->nullable();
             $table->timestamps();
         });
     }
@@ -22,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('editors');
+        Schema::dropIfExists('historico_profissional');
     }
 };

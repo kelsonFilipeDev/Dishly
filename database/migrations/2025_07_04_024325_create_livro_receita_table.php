@@ -11,8 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('categorias', function (Blueprint $table) {
+        Schema::create('livro_receita', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('livro_id')->constrained('livro')->onDelete('cascade');
+            $table->foreignId('receita_id')->constrained('receita')->onDelete('cascade');
+            $table->boolean('republicacao')->default(false);
             $table->timestamps();
         });
     }
@@ -22,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('categorias');
+        Schema::dropIfExists('livro_receita');
     }
 };

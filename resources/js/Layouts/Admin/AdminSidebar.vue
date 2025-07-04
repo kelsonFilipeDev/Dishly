@@ -30,7 +30,7 @@ import { computed } from 'vue'
 
 const navItems = [
   { name: 'Gestão de Utilizadores', href: '/admin/users' },
-  { name: 'Relatórios', href: '/admin/relatorios' },
+  { name: 'Relatórios', href: '/admin/Reports' },
   { name: 'Configurações', href: '/admin/configuracoes' },
   { name: 'Sair', href: '/logout' }
 ]
