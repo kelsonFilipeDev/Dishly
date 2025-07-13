@@ -73,36 +73,36 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import axios from 'axios'
-import { Link, usePage } from '@inertiajs/vue3'
+  import { ref } from 'vue'
+  import axios from 'axios'
+  import { Link, usePage } from '@inertiajs/vue3'
 
-// Captura o token CSRF da tag <meta name="csrf-token"> no HTML Blade
-const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content')
-axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken
+  // Captura o token CSRF da tag <meta name="csrf-token"> no HTML Blade
+  const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content')
+  axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken
 
-const form = ref({
-  name: '',
-  email: '',
-  password: '',
-  password_confirmation: '',
-})
+  const form = ref({
+    name: '',
+    email: '',
+    password: '',
+    password_confirmation: '',
+  })
 
-const register = async () => {
-  try {
-    const response = await axios.post('/register', form.value)
-    console.log('Utilizador criado:', response.data)
-    // Redireciona para o dashboard ou home após sucesso
-    window.location.href = 'Public/Home'
-  } catch (error) {
-    console.error('Erro no registro:', error.response?.data ?? error.message)
-    alert('Erro ao criar conta. Verifica os dados ou tenta novamente.')
+  const register = async () => {
+    try {
+      const response = await axios.post('/register', form.value)
+      console.log('Utilizador criado:', response.data)
+      // Redireciona para o dashboard ou home após sucesso
+      window.location.href = 'dashboard'
+    } catch (error) {
+      console.error('Erro no registro:', error.response?.data ?? error.message)
+      alert('Erro ao criar conta. Verifica os dados ou tenta novamente.')
+    }
   }
-}
 </script>
 
 <style scoped>
-body {
-  font-family: 'Inter', sans-serif;
-}
+  body {
+    font-family: 'Inter', sans-serif;
+  }
 </style>
