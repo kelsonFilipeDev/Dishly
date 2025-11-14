@@ -1,6 +1,6 @@
-# Dislhy
+# Dishly
 
-**Dislhy** é um sistema completo de gestão de receitas desenvolvido para informatizar e centralizar o acervo culinário de uma empresa que cria, testa e publica receitas em livros gastronómicos. Este projeto organiza o trabalho de cozinheiros, degustadores e editores, garantindo rastreabilidade, padronização e controlo de qualidade em todas as etapas — da criação da receita à sua publicação.
+**Dishly** é um sistema completo de gestão de receitas desenvolvido para informatizar e centralizar o acervo culinário de uma empresa que cria, testa e publica receitas em livros gastronómicos. Este projeto organiza o trabalho de cozinheiros, degustadores e editores, garantindo rastreabilidade, padronização e controlo de qualidade em todas as etapas — da criação da receita à sua publicação.
 
 ---
 
